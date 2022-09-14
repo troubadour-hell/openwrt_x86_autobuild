@@ -1,9 +1,15 @@
 # openwrt_x86_autobuild
-Forked from 
+Forked from：
 
 https://github.com/SuLingGG/OpenWrt-Buildbot
 
 https://github.com/DHDAXCW/OpenWRT_x86_x64
+
+Openwrt source code：
+
+https://github.com/coolsnowwolf/lede
+
+https://github.com/immortalwrt/immortalwrt
 
 自用超级乞丐版要啥没啥固件
 
