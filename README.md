@@ -1,4 +1,4 @@
-# openwrt_x86_autobuild
+# Openwrt X86 Auto Build
 Forked from：
 
 https://github.com/SuLingGG/OpenWrt-Buildbot
