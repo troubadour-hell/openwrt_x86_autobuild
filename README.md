@@ -1,11 +1,15 @@
 # Openwrt X86 Auto Build
 Forked from：
 
+https://github.com/P3TERX/Actions-OpenWrt
+
 https://github.com/SuLingGG/OpenWrt-Buildbot
 
 https://github.com/DHDAXCW/OpenWRT_x86_x64
 
-Openwrt source code：
+Use openwrt source code：
+
+https://github.com/openwrt/openwrt
 
 https://github.com/coolsnowwolf/lede
 
