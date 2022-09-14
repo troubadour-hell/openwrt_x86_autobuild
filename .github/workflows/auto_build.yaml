@@ -174,8 +174,7 @@ jobs:
           touch release.txt
           echo "后台地址：192.168.11.1
                 gh:使用Github Hosted Runner编译
-                sh:使用Slef Hosted Runner编译
-                gc:使用Github Hosted Runner编译，启用缓存" >> release.txt
+                sh:使用Slef Hosted Runner编译" >> release.txt
           echo "::set-output name=status::success"
           
     - name: Upload firmware to release
