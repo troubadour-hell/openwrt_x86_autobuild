@@ -9,6 +9,8 @@
 #=================================================
 
 export WORK_DIR=`pwd`
+export OPENWRTROOT=$OPENWRTROOT
+
 if [ -d "lede" ]
 then
     echo "lede directory exists."
@@ -22,10 +24,11 @@ else
 fi
 chmod +x $WORK_DIR/scripts/*.sh
 
+
 # Update feeds
 echo "Updating feeds..."
-cd $WORK_DIR/lede
-rm -rf ./tmp
+cd $OPENWRTROOT
+make distclean
 if [ -d "customfeeds" ]
 then
     rm -rf customfeeds
@@ -37,12 +40,12 @@ $WORK_DIR/scripts/hook-feeds.sh
 
 # Install Feeds
 echo "Installing feeds..."
-cd $WORK_DIR/lede
+cd $OPENWRTROOT
 ./scripts/feeds install -a
 
 # Load Custom Configurations
 echo "Loading custom configurations..."
-cd $WORK_DIR/lede
+cd $OPENWRTROOT
 cp $WORK_DIR/configs/.config .config
 if [ -d "package/community" ]
 then
@@ -55,28 +58,33 @@ make defconfig
 
 # Download Packages
 echo "Downloading packages..."
-cd $WORK_DIR/lede
+cd $OPENWRTROOT
 #wget https://github.com/coolsnowwolf/lede/pull/6526.patch
 #git apply 6526.patch
 make download -j20
 
 # Compile
 echo "Compiling..."
-cd $WORK_DIR/lede
+cd $OPENWRTROOT
 make tools/compile -j$((`nproc`+1)) || make tools/compile -j72
 make toolchain/compile -j$((`nproc`+1)) || make toolchain/compile -j72
 make target/compile -j$((`nproc`+1)) || make target/compile -j72 IGNORE_ERRORS=1
 make diffconfig
 make package/compile -j$((`nproc`+1)) IGNORE_ERRORS=1 || make package/compile -j72 IGNORE_ERRORS=1
 make package/index
-
+cd $OPENWRTROOT/bin/packages/*
+PLATFORM=$(basename `pwd`)
+cd $OPENWRTROOT/bin/targets/*
+TARGET=$(basename `pwd`)
+cd *
+SUBTARGET=$(basename `pwd`)
 
 # Gnerate Firmware
 cd $WORK_DIR/configs/opkg
 sed -i "s/subtarget/$SUBTARGET/g" distfeeds*.conf
 sed -i "s/target\//$TARGET\//g" distfeeds*.conf
 sed -i "s/platform/$PLATFORM/g" distfeeds*.conf
-cd $WORK_DIR/lede
+cd $OPENWRTROOT
 if [ -d "files" ]
 then
     rm -rf files
