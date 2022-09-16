@@ -9,7 +9,7 @@
 #=================================================
 
 export WORK_DIR=`pwd`
-export OPENWRTROOT=$OPENWRTROOT
+export OPENWRTROOT=$WORK_DIR/lede
 
 if [ -d "lede" ]
 then
