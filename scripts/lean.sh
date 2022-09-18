@@ -61,4 +61,4 @@ echo '
 CONFIG_LRU_GEN=y
 CONFIG_LRU_GEN_ENABLED=y
 # CONFIG_LRU_GEN_STATS is not set
-' >>./target/linux/generic/config-5.10
+' >>./target/linux/generic/config-5.19
