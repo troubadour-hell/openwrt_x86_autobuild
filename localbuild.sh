@@ -90,12 +90,12 @@ then
     rm -rf files
 fi
 mkdir -p files/etc/uci-defaults/
-cp $WORK_DIRscripts/init-settings.sh files/etc/uci-defaults/99-init-settings
+cp $WORK_DIR/scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
 mkdir -p files/etc/opkg
-cp $WORK_DIRconfigs/opkg/distfeeds-packages-server.conf files/etc/opkg/distfeeds.conf.server
+cp $WORK_DIR/configs/opkg/distfeeds-packages-server.conf files/etc/opkg/distfeeds.conf.server
 mkdir -p files/www/snapshots
 cp -r bin/targets files/www/snapshots
-cp $WORK_DIRconfigs/opkg/distfeeds-18.06-local.conf files/etc/opkg/distfeeds.conf
+cp $WORK_DIR/configs/opkg/distfeeds-18.06-local.conf files/etc/opkg/distfeeds.conf
 cp files/etc/opkg/distfeeds.conf.server files/etc/opkg/distfeeds.conf.mirror
 sed -i "s/http:\/\/192.168.123.100:2345\/snapshots/https:\/\/openwrt.cc\/snapshots\/$(date +"%Y-%m-%d")\/lean/g" files/etc/opkg/distfeeds.conf.mirror
 make package/install -j$((`nproc`+1)) || make package/install -j1 V=s
