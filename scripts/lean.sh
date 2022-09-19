@@ -56,7 +56,9 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
 
 # Add MGLRU
-cp $GITHUB_WORKSPACE/patches/Multi-Gen-LRU-Framework.patch target/linux/generic/pending-5.19/ || cp $WORK_DIR/patches/Multi-Gen-LRU-Framework.patch target/linux/generic/pending-5.19/
+pushd target/linux/generic/pending-5.19
+wget -O Multi-Gen-LRU-Framework.patch https://patchwork.kernel.org/series/657196/mbox/
+popd
 echo '
 CONFIG_LRU_GEN=y
 CONFIG_LRU_GEN_ENABLED=y
