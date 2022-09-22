@@ -56,11 +56,11 @@ sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_genera
 sed -i 's/5.15/5.19/g' target/linux/x86/Makefile
 
 # Add MGLRU
-pushd target/linux/generic/pending-5.19
-wget -O Multi-Gen-LRU-Framework.patch https://patchwork.kernel.org/series/657196/mbox/
-popd
-echo '
-CONFIG_LRU_GEN=y
-CONFIG_LRU_GEN_ENABLED=y
-# CONFIG_LRU_GEN_STATS is not set
-' >>./target/linux/generic/config-5.19
+#pushd target/linux/generic/pending-5.19
+#wget -O Multi-Gen-LRU-Framework.patch https://patchwork.kernel.org/series/657196/mbox/
+#popd
+#echo '
+#CONFIG_LRU_GEN=y
+#CONFIG_LRU_GEN_ENABLED=y
+#CONFIG_LRU_GEN_STATS is not set
+#' >>./target/linux/generic/config-5.19
