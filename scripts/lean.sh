@@ -34,7 +34,7 @@ rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/data/The_Nymphaeum.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg || cp -f $WORK_DIR/data/The_Nymphaeum.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # Add apk (Apk Packages Manager)
-svn co https://github.com/openwrt/packages/trunk/utils/apk
+#svn co https://github.com/openwrt/packages/trunk/utils/apk
 popd
 
 # Mod zzz-default-settings
