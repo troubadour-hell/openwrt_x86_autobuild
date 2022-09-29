@@ -23,6 +23,10 @@ rm -rf package/helloworld
 # Add OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
+# Add Keepalived
+svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
+
+
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
 
