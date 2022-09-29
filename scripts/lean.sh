@@ -28,7 +28,7 @@ pushd  ../../feeds/packages/net
 rm -rf keepalived
 svn co https://github.com/jempatel/packages/branches/improve_keepalived-uci/net/keepalived
 popd
-pushd ../..//customfeeds/luci/applications
+pushd ../../customfeeds/luci/applications
 svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
 popd
 
