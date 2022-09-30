@@ -24,13 +24,13 @@ rm -rf package/helloworld
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 # Add Keepalived
-pushd  ../../feeds/packages/net
-rm -rf keepalived
-svn co https://github.com/jempatel/packages/branches/improve_keepalived-uci-sync/net/keepalived
-popd
+#pushd  ../../feeds/packages/net
+#rm -rf keepalived
+#svn co https://github.com/jempatel/packages/branches/improve_keepalived-uci-sync/net/keepalived
+#popd
 
-svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
-sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' luci-app-keepalived/Makefile
+#svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
+#sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' luci-app-keepalived/Makefile
 
 
 
