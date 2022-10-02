@@ -23,7 +23,6 @@ else
     git clone https://github.com/coolsnowwolf/lede
 fi
 chmod +x $WORK_DIR/scripts/*.sh
-
 if [ -d "files" ]
 then
     rm -rf files
@@ -77,7 +76,7 @@ make diffconfig
 make package/compile -j$((`nproc`+1)) IGNORE_ERRORS=1 || make package/compile -j72 IGNORE_ERRORS=1
 make package/index
 cd $OPENWRTROOT/bin/packages/*
-
+PLATFORM=$(basename `pwd`)
 cd $OPENWRTROOT/bin/targets/*
 TARGET=$(basename `pwd`)
 cd *
@@ -89,7 +88,6 @@ sed -i "s/subtarget/$SUBTARGET/g" distfeeds*.conf
 sed -i "s/target\//$TARGET\//g" distfeeds*.conf
 sed -i "s/platform/$PLATFORM/g" distfeeds*.conf
 cd $OPENWRTROOT
-
 mkdir -p files/etc/uci-defaults/
 cp $WORK_DIR/scripts/init-settings.sh files/etc/uci-defaults/99-init-settings
 mkdir -p files/etc/opkg
