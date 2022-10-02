@@ -24,11 +24,5 @@ echo "src-link packages $packages_feed" >> feeds.conf.default
 sed -i '/src-git luci/d' feeds.conf.default
 echo "src-link luci $luci_feed" >> feeds.conf.default
 
-echo '
-src-git helloworld https://github.com/fw876/helloworld
-src-git passwall https://github.com/xiaorouji/openwrt-passwall
-' >>feeds.conf.default
-
-
 # Update feeds
 ./scripts/feeds update -a
