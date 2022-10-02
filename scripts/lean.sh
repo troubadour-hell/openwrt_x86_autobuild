@@ -24,12 +24,12 @@ rm -rf openwrt-package/luci-app-verysync
 rm -rf package/helloworld
 
 # Add luci-app-passwall
-#git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
-#svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
 
 # Add luci-app-vssr <M>
-#git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
-#git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
+git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
+git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 
 # Add OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
