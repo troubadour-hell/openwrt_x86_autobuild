@@ -162,7 +162,7 @@ jobs:
           echo "后台地址：192.168.11.1
                 gh:使用Github Hosted Runner编译
                 sh:使用Slef Hosted Runner编译" >> release.txt
-          echo "::set-output name=status::success"
+          echo "status=success" >> $GITHUB_OUTPUT
           
     - name: Upload firmware to release
       uses: softprops/action-gh-release@v1
