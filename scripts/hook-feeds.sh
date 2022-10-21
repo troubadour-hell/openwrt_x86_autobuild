@@ -2,8 +2,6 @@
 # Svn checkout packages from immortalwrt's repository
 pushd customfeeds
 
-
-
 # Add tmate
 git clone --depth=1 https://github.com/immortalwrt/openwrt-tmate
 

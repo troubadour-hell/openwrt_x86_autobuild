@@ -15,16 +15,9 @@ git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
 mkdir package/community
 pushd package/community
 
-# Add Lienol's Packages
-#git clone --depth=1 https://github.com/Lienol/openwrt-package
-#rm -rf ../../customfeeds/luci/applications/luci-app-kodexplorer
-#rm -rf openwrt-package/verysync
-#rm -rf openwrt-package/luci-app-verysync
-
 # Add luci-app-passwall
 git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
 svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
-
 
 # Add luci-app-vssr <M>
 git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
@@ -41,8 +34,6 @@ svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 #svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
 #sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' luci-app-keepalived/Makefile
-
-
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -73,5 +64,5 @@ sed -i 's/\/bin\/ash/\/usr\/bin\/zsh/g' package/base-files/files/etc/passwd
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.11.1/g' package/base-files/files/bin/config_generate
 
-# Test kernel 5.19
+# Test kernel 6.0
 sed -i 's/5.15/6.0/g' target/linux/x86/Makefile
