@@ -56,7 +56,7 @@ then
 fi
 $WORK_DIR/scripts/lean.sh
 $WORK_DIR/scripts/preset-terminal-tools.sh
-sed -i '$a\CONFIG_DOWNLOAD_TOOL_CUSTOM=\"aria2c\"\nCONFIG_LOCALMIRROR=\"https://openwrt.cc/dl/coolsnowwolf/lede\"' .config
+sed -i '$a\CONFIG_LOCALMIRROR=\"https://openwrt.cc/dl/coolsnowwolf/lede\"' .config
 make defconfig
 
 # Download Packages
