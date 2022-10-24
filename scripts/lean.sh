@@ -10,30 +10,34 @@
 
 # Add mosdns
 git clone https://github.com/sbwml/luci-app-mosdns package/mosdns
+git clone https://github.com/sbwml/v2ray-geodata package/geodata
 
 # Clone community packages to package/community
 mkdir package/community
 pushd package/community
 
-# Add luci-app-passwall
-git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
-svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+# Add luci-app-ssr-plus
+# git clone --depth=1 https://github.com/fw876/helloworld
 
-# Add luci-app-vssr <M>
-git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
-git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
+# Add luci-app-passwall
+# git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall
+# svn co https://github.com/xiaorouji/openwrt-passwall/branches/luci/luci-app-passwall
+
+# Add luci-app-vssr
+# git clone --depth=1 https://github.com/jerrykuku/lua-maxminddb.git
+# git clone --depth=1 https://github.com/jerrykuku/luci-app-vssr
 
 # Add OpenClash
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash
 
 # Add Keepalived
-#pushd  ../../feeds/packages/net
-#rm -rf keepalived
-#svn co https://github.com/jempatel/packages/branches/improve_keepalived-uci-sync/net/keepalived
-#popd
+# pushd  ../../feeds/packages/net
+# rm -rf keepalived
+# svn co https://github.com/jempatel/packages/branches/improve_keepalived-uci-sync/net/keepalived
+# popd
 
-#svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
-#sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' luci-app-keepalived/Makefile
+# svn co https://github.com/jempatel/luci/branches/luci-app-keepalived/applications/luci-app-keepalived
+# sed -i 's/..\/..\/luci.mk/$(TOPDIR)\/feeds\/luci\/luci.mk/g' luci-app-keepalived/Makefile
 
 # Add luci-app-poweroff
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff
@@ -45,8 +49,6 @@ rm -rf ../../customfeeds/luci/themes/luci-theme-argon
 rm -rf ./luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 cp -f $GITHUB_WORKSPACE/data/The_Nymphaeum.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg || cp -f $WORK_DIR/data/The_Nymphaeum.jpg luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
-# Add apk (Apk Packages Manager)
-#svn co https://github.com/openwrt/packages/trunk/utils/apk
 popd
 
 # Mod zzz-default-settings
