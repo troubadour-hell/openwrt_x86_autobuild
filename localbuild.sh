@@ -62,8 +62,6 @@ make defconfig
 # Download Packages
 echo "Downloading packages..."
 cd $OPENWRTROOT
-#wget https://github.com/coolsnowwolf/lede/pull/6526.patch
-#git apply 6526.patch
 make download -j20
 
 # Compile
