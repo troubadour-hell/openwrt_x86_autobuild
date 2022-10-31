@@ -20,7 +20,7 @@ then
     git pull
 else
     echo "lede directory does not exist."
-    git clone https://github.com/coolsnowwolf/lede
+    git clone --depth=1 https://github.com/coolsnowwolf/lede
 fi
 chmod +x $WORK_DIR/scripts/*.sh
 if [ -d "files" ]
