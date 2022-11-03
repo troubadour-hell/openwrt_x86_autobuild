@@ -10,8 +10,8 @@ name: build-github-hosted
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 1 21 * * *
+  # schedule:
+  #   - cron: 1 21 * * *
   # watch:
   #   types: started
 
